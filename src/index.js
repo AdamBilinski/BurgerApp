@@ -16,12 +16,16 @@ export class Index extends React.Component {
       ]
     }
 
+    addNewCard = (cardInfo) => {
+      console.log(cardInfo);
+    }
+
   render() {
     return (
       <div>
         <p>Hi ho Hello React2!</p>
         <Person />
-        <Form />
+        <Form onSubmit = {this.addNewCard}/>
         <CardList cards={this.state.cards} />
       </div>
     )
