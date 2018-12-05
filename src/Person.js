@@ -1,5 +1,4 @@
 import React from "react";
-import ReactDOM from "react-dom";
 import style from "./person.css";
 
 export function Person(){
@@ -10,5 +9,3 @@ export function Person(){
         </div>
     )
 };
-
-ReactDOM.render(<Person/>, document.getElementById("p1"));
