@@ -7,23 +7,18 @@ import { Form } from "./Form"
 
 export class Index extends React.Component {
     state = {
-      cards : [
-        {
-          name: "Adam Bilinski",
-          company: "IHS Markit",
-          avatar_url: "https://avatars2.githubusercontent.com/u/45371818?v=4"
-        }
-      ]
+      cards : []
     }
 
     addNewCard = (cardInfo) => {
-      console.log(cardInfo);
+      this.setState(prevState => ({
+        cards: prevState.cards.concat(cardInfo)
+      }));
     }
 
   render() {
     return (
       <div>
-        <p>Hi ho Hello React2!</p>
         <Person />
         <Form onSubmit = {this.addNewCard}/>
         <CardList cards={this.state.cards} />

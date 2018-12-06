@@ -6,11 +6,10 @@ export class Form extends React.Component{
     
     handleSubmit = (event) =>{
         event.preventDefault();
-        console.log()
-
-        Axios.get('https://api.github.com/users/${this.state.username}')
+        Axios.get(`https://api.github.com/users/${this.state.username}`)
             .then(resp => {
-                console.log(resp);
+                this.props.onSubmit(resp.data);
+                this.setState({username: ''});
             })
     }
 

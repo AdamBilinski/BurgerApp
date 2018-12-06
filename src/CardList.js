@@ -4,7 +4,7 @@ import {Card} from './Card';
 export function CardList(props){
     return(
         <div>
-            {props.cards.map(card => <Card key={card.name} {...card} />)}
+            {props.cards.map(card => <Card key={card.id} {...card} />)}
         </div>
     )
 };
